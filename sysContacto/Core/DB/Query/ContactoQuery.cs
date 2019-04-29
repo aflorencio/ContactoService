@@ -47,7 +47,7 @@ namespace sysContacto.Core.DB.Query
 
         public async Task InsertUser(sysContacto.Core.DB.Models.ContactoDBModel user) //CREATE
         {
-            user._id = ObjectId.GenerateNewId();
+            user._id = ObjectId.GenerateNewId(); // Esto es por que generamos el objetid aqui asi no lo genera la base de datos y podemos devolver y usar el valor.
             await _usersCollection.InsertOneAsync(user);
         }
 
