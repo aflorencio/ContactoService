@@ -51,6 +51,8 @@ namespace sysContacto.Core.DB.Models
         public bool recibidoPorSecretaria { get; set; }
         [BsonIgnoreIfNull]
         public string fuentePosibleCliente { get; set; }
+        [BsonIgnoreIfNull]
+        public string rol { get; set; } = "contacto";
 
     }
 }

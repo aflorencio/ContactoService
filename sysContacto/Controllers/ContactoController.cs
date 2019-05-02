@@ -70,6 +70,7 @@ namespace sysContacto.Controllers
             data.descripcionCaso = value.Get("descripcionCaso");
             data.recibidoPorSecretaria = value.Get("recibidoPorSecretaria") == "true" ? true : false;
             data.fuentePosibleCliente = value.Get("fuentePosibleCliente");
+            data.rol = value.Get("rol");
 
 
             //var gola = value.Get("name");
