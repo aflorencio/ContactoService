@@ -21,6 +21,7 @@ namespace ContactoServiceConsole
             using (var server = new RestServer())
             {
                 server.Port = "5001";
+                server.Host = "*";
                 server.LogToConsole().Start();
                 Console.ReadLine();
                 server.Stop();
