@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactoService", "sysContacto\ContactoService.csproj", "{EB1ED6C1-8F0F-4EAD-B117-E63701EF46F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactoServiceAzure", "ContactoServiceAzure\ContactoServiceAzure.csproj", "{826CFE30-470A-4F05-B738-F44DDD092AE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactoServiceConsole", "ContactoServiceConsole\ContactoServiceConsole.csproj", "{CAA81FA1-1097-4396-9AF1-A095F6797A9E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{EB1ED6C1-8F0F-4EAD-B117-E63701EF46F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB1ED6C1-8F0F-4EAD-B117-E63701EF46F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB1ED6C1-8F0F-4EAD-B117-E63701EF46F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{826CFE30-470A-4F05-B738-F44DDD092AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{826CFE30-470A-4F05-B738-F44DDD092AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{826CFE30-470A-4F05-B738-F44DDD092AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{826CFE30-470A-4F05-B738-F44DDD092AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA81FA1-1097-4396-9AF1-A095F6797A9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA81FA1-1097-4396-9AF1-A095F6797A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA81FA1-1097-4396-9AF1-A095F6797A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA81FA1-1097-4396-9AF1-A095F6797A9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
