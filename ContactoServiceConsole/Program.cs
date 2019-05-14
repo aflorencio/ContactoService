@@ -15,6 +15,7 @@ namespace ContactoServiceConsole
     {
         static void Main(string[] args)
         {
+            Console.Title = "ContactoService v0.1.0.1";
             Console.WriteLine("     C O N T A C T O   S E R V I C E   v0.1.0.1 ");
             Console.ReadLine();
 
@@ -23,6 +24,7 @@ namespace ContactoServiceConsole
                 server.Port = "5001";
                 server.Host = "*";
                 server.LogToConsole().Start();
+                Console.Title = "[ON] ContactoService v0.1.0.1";
                 Console.ReadLine();
                 server.Stop();
             }
@@ -34,7 +36,7 @@ namespace ContactoServiceConsole
     public class TestResource
     {
         #region GET
-        [RestRoute(HttpMethod = HttpMethod.GET, PathInfo = "/api/contacto")]
+        [RestRoute(HttpMethod = HttpMethod.GET, PathInfo = "/api/contacto/all")]
         public IHttpContext ReadAllContacto(IHttpContext context)
         {
             Core.MainCoreContacto _ = new Core.MainCoreContacto();
@@ -47,7 +49,7 @@ namespace ContactoServiceConsole
             return context;
         }
 
-        [RestRoute(HttpMethod = HttpMethod.GET, PathInfo = "/api/readone")]
+        [RestRoute(HttpMethod = HttpMethod.GET, PathInfo = "/api/readone/one")]
         public IHttpContext ReadOneContacto(IHttpContext context)
         {
             Core.MainCoreContacto _ = new Core.MainCoreContacto();
@@ -64,7 +66,7 @@ namespace ContactoServiceConsole
 
         #region POST
 
-        [RestRoute(HttpMethod = HttpMethod.POST, PathInfo = "/api/addContacto")]
+        [RestRoute(HttpMethod = HttpMethod.POST, PathInfo = "/api/contacto/add")]
         public IHttpContext AddContacto(IHttpContext context)
         {
             Core.MainCoreContacto _ = new Core.MainCoreContacto();
@@ -109,7 +111,7 @@ namespace ContactoServiceConsole
 
         #region PUT
 
-        [RestRoute(HttpMethod = HttpMethod.PUT, PathInfo = "/api/updatecontacto")]
+        [RestRoute(HttpMethod = HttpMethod.PUT, PathInfo = "/api/contacto/update")]
         public IHttpContext UpdateContacto(IHttpContext context)
         {
             Core.MainCoreContacto _ = new Core.MainCoreContacto();
@@ -155,7 +157,7 @@ namespace ContactoServiceConsole
         #endregion
 
         [RestRoute]
-        public IHttpContext HelloWorld(IHttpContext context)
+        public IHttpContext Default(IHttpContext context)
         {
             context.Response.SendResponse("ContactoService.");
             return context;
