@@ -49,7 +49,7 @@ namespace ContactoServiceConsole
             return context;
         }
 
-        [RestRoute(HttpMethod = HttpMethod.GET, PathInfo = "/api/readone/one")]
+        [RestRoute(HttpMethod = HttpMethod.GET, PathInfo = "/api/contacto/one")]
         public IHttpContext ReadOneContacto(IHttpContext context)
         {
             Core.MainCoreContacto _ = new Core.MainCoreContacto();
@@ -114,10 +114,10 @@ namespace ContactoServiceConsole
         [RestRoute(HttpMethod = HttpMethod.PUT, PathInfo = "/api/contacto/update")]
         public IHttpContext UpdateContacto(IHttpContext context)
         {
+     
             Core.MainCoreContacto _ = new Core.MainCoreContacto();
-
             var id = context.Request.QueryString["id"] ?? "what?"; //Si no id dara error
-            var data = _.ReadId(id);
+                                                                    //var data = _.ReadId(id);
 
             var name = context.Request.QueryString["name"] ?? "what?";
             var valor = context.Request.QueryString["value"] ?? "what?";
@@ -127,12 +127,18 @@ namespace ContactoServiceConsole
             if (existeMetodo == true)
             {
                 _.Update(id, name, valor);
+
+               // _ = null;
+
+
+
                 context.Response.SendResponse("Updated!");
                 return context;
             }
 
             context.Response.SendResponse("Error!");
             return context;
+        
         }
 
 

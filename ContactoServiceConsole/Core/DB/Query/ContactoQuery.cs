@@ -101,12 +101,25 @@ namespace ContactoServiceConsole.Core.DB.Query
 
         public bool UpdateUser(string id, string udateFieldName, string updateFieldValue)
         {
-            var filter = Builders<Core.DB.Models.ContactoDBModel>.Filter.Eq("_id", ObjectId.Parse(id));
-            var update = Builders<Core.DB.Models.ContactoDBModel>.Update.Set(udateFieldName, updateFieldValue);
+            try
+            {
+                var filter = Builders<Core.DB.Models.ContactoDBModel>.Filter.Eq("_id", ObjectId.Parse(id));
+                var update = Builders<Core.DB.Models.ContactoDBModel>.Update.Set(udateFieldName, updateFieldValue);
 
-            var result = _usersCollection.UpdateOne(filter, update);
+                var result = _usersCollection.UpdateOne(filter, update);
 
-            return result.ModifiedCount != 0;
+                ((IDisposable)filter).Dispose();
+                ((IDisposable)update).Dispose();
+                ((IDisposable)result).Dispose();
+                _client = null;
+
+                return result.ModifiedCount != 0;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            
         }
 
         #endregion
