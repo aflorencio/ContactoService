@@ -54,6 +54,8 @@ namespace ContactoServiceConsole.Core.DB.Models
         public string fuentePosibleCliente { get; set; }
         [BsonIgnoreIfNull]
         public string rol { get; set; } = "contacto";
+        [BsonIgnoreIfNull]
+        public bool tomaContacto { get; set; } = false;
 
     }
 }
