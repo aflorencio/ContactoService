@@ -43,7 +43,9 @@ namespace ContactoServiceConsole.Core.DB.Models
         [BsonIgnoreIfNull]
         public string langNative { get; set; }
         [BsonIgnoreIfNull]
-        public string comercialAsignado { get; set; }
+        public ObjectId partnerAsignado { get; set; }
+        [BsonIgnoreIfNull]
+        public ObjectId comercialAsignado { get; set; }
         [BsonIgnoreIfNull]
         public string particularEmpresa { get; set; }
         [BsonIgnoreIfNull]
