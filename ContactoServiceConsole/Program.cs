@@ -97,7 +97,7 @@ namespace ContactoServiceConsole
             data.recibidoPorSecretaria = dataId?.recibidoPorSecretaria == "true" ? true : false;
             data.fuentePosibleCliente = dataId?.fuentePosibleCliente;
             data.rol = dataId?.rol;
-            data.tomaContacto = dataId?.tomaContacto;
+            data.tomaContacto = dataId?.tomaContacto == null ? false : dataId?.tomaContacto;
 
 
             _.CreateContacto(data);
