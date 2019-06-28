@@ -2,11 +2,13 @@
 using Grapevine.Server;
 using Grapevine.Server.Attributes;
 using Grapevine.Shared;
+using MongoDB.Bson;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ContactoServiceConsole
@@ -91,7 +93,8 @@ namespace ContactoServiceConsole
             data.pais = dataId?.pais;
             data.lang = dataId?.lang;
             data.langNative = dataId?.langNative;
-            data.comercialAsignado = dataId?.comercialAsignado;
+            data.partnerAsignado = new Regex(@"^[0-9a-fA-F]{24}$").Match(dataId?.partnerAsignado.ToString()).Success == true ? ObjectId.Parse(dataId?.partnerAsignado.ToString()) : null;
+            data.comercialAsignado = new Regex(@"^[0-9a-fA-F]{24}$").Match(dataId?.comercialAsignado.ToString()).Success == true ? ObjectId.Parse(dataId?.comercialAsignado.ToString()) : null;
             data.particularEmpresa = dataId?.particularEmpresa;
             data.descripcionCaso = dataId?.descripcionCaso;
             data.recibidoPorSecretaria = dataId?.recibidoPorSecretaria == "true" ? true : false;
