@@ -93,8 +93,8 @@ namespace ContactoServiceConsole
             data.pais = dataId?.pais;
             data.lang = dataId?.lang;
             data.langNative = dataId?.langNative;
-            data.partnerAsignado = new Regex(@"^[0-9a-fA-F]{24}$").Match(dataId?.partnerAsignado.ToString()).Success == true ? ObjectId.Parse(dataId?.partnerAsignado.ToString()) : null;
-            data.comercialAsignado = new Regex(@"^[0-9a-fA-F]{24}$").Match(dataId?.comercialAsignado.ToString()).Success == true ? ObjectId.Parse(dataId?.comercialAsignado.ToString()) : null;
+            //data.partnerAsignado = new Regex(@"^[0-9a-fA-F]{24}$").Match(dataId?.partnerAsignado.ToString()).Success == true ? ObjectId.Parse(dataId?.partnerAsignado.ToString()) : null;
+            //data.comercialAsignado = new Regex(@"^[0-9a-fA-F]{24}$").Match(dataId?.comercialAsignado.ToString()).Success == true ? ObjectId.Parse(dataId?.comercialAsignado.ToString()) : null;
             data.particularEmpresa = dataId?.particularEmpresa;
             data.descripcionCaso = dataId?.descripcionCaso;
             data.recibidoPorSecretaria = dataId?.recibidoPorSecretaria == "true" ? true : false;
@@ -107,6 +107,8 @@ namespace ContactoServiceConsole
 
             string json = JsonConvert.SerializeObject(data, Formatting.Indented);
             context.Response.AppendHeader("Content-Type", "application/json");
+            context.Response.AppendHeader("Access-Control-Allow-Origin", "*");
+            context.Response.AppendHeader("Access-Control-Allow-Headers", "X-Requested-With");
             context.Response.SendResponse(json);
             return context;
         }
